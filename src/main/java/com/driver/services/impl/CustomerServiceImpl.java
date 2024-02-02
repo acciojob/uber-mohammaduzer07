@@ -12,7 +12,7 @@ import com.driver.repository.TripBookingRepository;
 import java.util.*;
 
 @Service
-public class CustomerServiceImp implements CustomerService {
+public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
 	CustomerRepository customerRepository2;
