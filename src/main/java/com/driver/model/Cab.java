@@ -8,14 +8,14 @@ public class Cab {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
+    int Id;
 
-    private int perKmRate;
+    int perKmRate;
 
-    private boolean available;
+    boolean available;
     @JoinColumn
     @OneToOne
-    private Driver driver;
+    Driver driver;
 
     public Cab(){
 

@@ -27,15 +27,14 @@ public class TripBooking {
     public TripBooking(){
 
     }
-    public TripBooking(int tripBookingId, String fromLocation, String toLocation, int distanceInKm, TripStatus status, int bill, Customer customer, Driver driver) {
-        this.tripBookingId = tripBookingId;
+    public TripBooking(String fromLocation, String toLocation, int distanceInKm, TripStatus status, int bill, Customer customer, Driver driver) {
         this.fromLocation = fromLocation;
         this.toLocation = toLocation;
         this.distanceInKm = distanceInKm;
         this.status = status;
         this.bill = bill;
-        this.customer = customer;
         this.driver = driver;
+        this.customer = customer;
     }
     public int getTripBookingId() {
         return tripBookingId;
