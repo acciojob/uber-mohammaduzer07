@@ -1,6 +1,8 @@
 package com.driver.model;
 
 
+import io.swagger.models.auth.In;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,14 +10,11 @@ import java.util.List;
 @Entity
 @Table(name = "Customer")
 public class Customer {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customerId;
-
+    private Integer customerId;
     private String mobile;
     private String password;
-
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     public List<TripBooking> tripBookingList = new ArrayList<>();
 
@@ -23,14 +22,12 @@ public class Customer {
 
     }
 
-    public Customer(int customerId, String mobile, String password, List<TripBooking> tripBookingList) {
-        this.customerId = customerId;
+    public Customer(String mobile, String password) {
         this.mobile = mobile;
         this.password = password;
-        this.tripBookingList = tripBookingList;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 

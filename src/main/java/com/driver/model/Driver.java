@@ -11,14 +11,14 @@ public class Driver {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int driverId;
+    private Integer driverId;
     private String mobile;
     private String password;
 
     @OneToOne(mappedBy = "driver", cascade = CascadeType.ALL)
-    Cab cab;
+    private Cab cab;
     @OneToMany(mappedBy = "driver", cascade = CascadeType.ALL)
-    public List<TripBooking> tripBookingList = new ArrayList<>();
+    private List<TripBooking> tripBookingList = new ArrayList<>();
 
     public Driver(){
 
@@ -30,7 +30,7 @@ public class Driver {
         this.cab = cab;
         this.tripBookingList = tripBookingList;
     }
-    public int getDriverId() {
+    public Integer getDriverId() {
         return driverId;
     }
     public void setDriverId(int driverId) {

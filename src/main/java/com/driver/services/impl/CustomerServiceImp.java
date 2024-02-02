@@ -3,7 +3,6 @@ package com.driver.services.impl;
 import com.driver.model.*;
 import com.driver.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.driver.repository.CustomerRepository;
@@ -13,7 +12,7 @@ import com.driver.repository.TripBookingRepository;
 import java.util.*;
 
 @Service
-public class CustomerServiceImpl implements CustomerService {
+public class CustomerServiceImp implements CustomerService {
 
 	@Autowired
 	CustomerRepository customerRepository2;
@@ -33,6 +32,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public void deleteCustomer(Integer customerId) {
 		// Delete customer without using deleteById function
+		customerRepository2.deleteById(customerId);
 //		Customer customer = customerRepository2.findById(customerId).get();
 //		List<TripBooking> bookingList = customer.getTripBookingList();
 //
@@ -48,7 +48,6 @@ public class CustomerServiceImpl implements CustomerService {
 //		//Now we will delete the customer from the repository and as a result of cascading effect trips will also
 //		//be deleted
 //		customerRepository2.delete(customer);
-		customerRepository2.deleteById(customerId);
 
 	}
 
